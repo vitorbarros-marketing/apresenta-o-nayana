@@ -1,0 +1,170 @@
+html,
+body {
+    margin: 0;
+    height: 100%;
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans)
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden
+}
+
+#bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 20px;
+    border-bottom: 1px solid var(--border)
+}
+
+#bar button {
+    background: none;
+    border: 0;
+    color: var(--muted-foreground);
+    cursor: pointer;
+    font: inherit;
+    font-size: 14px
+}
+
+#home {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    letter-spacing: .18em;
+    text-transform: uppercase
+}
+
+.dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 5px;
+    background: var(--brand);
+    display: inline-block
+}
+
+#dots {
+    display: flex;
+    gap: 4px
+}
+
+#dots button {
+    height: 6px;
+    width: 12px;
+    border-radius: 99px;
+    background: var(--border);
+    transition: all .2s;
+    padding: 0
+}
+
+#dots button.active {
+    width: 32px;
+    background: var(--brand)
+}
+
+.tools button {
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-size: 16px
+}
+
+#stage {
+    position: relative;
+    flex: 1;
+    overflow: hidden
+}
+
+#scaler {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 1920px;
+    height: 1080px;
+    margin-left: -960px;
+    margin-top: -540px;
+    transform-origin: center center
+}
+
+.slide {
+    display: none
+}
+
+.slide.active {
+    display: block
+}
+
+#controls {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px
+}
+
+#controls button,
+#counter {
+    border: 1px solid var(--border);
+    background: color-mix(in oklab, var(--card) 80%, transparent);
+    backdrop-filter: blur(8px);
+    color: var(--foreground);
+    border-radius: 99px;
+    cursor: pointer
+}
+
+#controls button {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    line-height: 1
+}
+
+#counter {
+    padding: 8px 16px;
+    font-size: 12px;
+    letter-spacing: .2em;
+    color: var(--muted-foreground)
+}
+
+body.grid #scaler {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0;
+    transform: none !important;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    padding: 24px;
+    overflow-y: auto;
+    height: 100%;
+    box-sizing: border-box
+}
+
+body.grid #controls {
+    display: none
+}
+
+body.grid .slide {
+    display: block;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    height: 0;
+    padding-bottom: 56.25%;
+    position: relative
+}
+
+body.grid .slide .slide-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: top left
+}
