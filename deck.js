@@ -1,4 +1,3 @@
-
 const slides = [...document.querySelectorAll('.slide')];
 const total = slides.length; let i = 0, grid = false;
 const dots = document.getElementById('dots');

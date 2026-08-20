@@ -3843,7 +3843,7 @@
 
 :root {
   --radius: .75rem;
-  --brand: oklch(68% .17 158);
+  --brand: oklch(68% .17 300);
   --brand-soft: oklch(82% .13 162);
   --brand-deep: oklch(34% .08 165);
   --onbrand: oklch(16% .02 165);
