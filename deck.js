@@ -38,3 +38,14 @@ addEventListener('keydown', e => {
     if (e.key === 'Escape') toggleGrid(false); if (e.key === 'Home') go(0);
 });
 addEventListener('resize', fit); render(); fit();
+
+function go(n) { 
+    // Se estiver no último slide e tentar ir para o próximo, redireciona
+    if (n >= total) {
+        window.location.href = "https://alexandre-review.lovable.app";
+        return;
+    }
+    i = Math.max(0, Math.min(total - 1, n)); 
+    if (grid) toggleGrid(false); 
+    render(); 
+}

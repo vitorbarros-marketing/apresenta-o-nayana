@@ -270,3 +270,25 @@ body.grid .slide .slide-content {
         grid-template-columns: repeat(2, 1fr)
     }
 }
+
+.next-deck-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 36px;
+  background-color: var(--brand);
+  color: #ffffff;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 10px 30px -10px var(--brand);
+}
+
+.next-deck-btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+  box-shadow: 0 15px 35px -10px var(--brand);
+}
